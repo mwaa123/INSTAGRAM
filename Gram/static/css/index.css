@@ -1,3 +1,70 @@
-h1{
-color: blueviolet;
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
 }
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  overflow:hidden;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-transform: translate3d(0, 0, 0);
+          transform: translate3d(0, 0, 0);
+}
+
+.instagram-logo {
+    width: 200px;
+    height: 200px;
+    position: relative;;
+    background: -webkit-radial-gradient(circle farthest-corner at 35% 90%, #fec564, rgba(0, 0, 0, 0) 50%), -webkit-radial-gradient(circle farthest-corner at 0 140%, #fec564, rgba(0, 0, 0, 0) 50%), -webkit-radial-gradient(ellipse farthest-corner at 0 -25%, #5258cf, rgba(0, 0, 0, 0) 50%), -webkit-radial-gradient(ellipse farthest-corner at 20% -50%, #5258cf, rgba(0, 0, 0, 0) 50%), -webkit-radial-gradient(ellipse farthest-corner at 100% 0, #893dc2, rgba(0, 0, 0, 0) 50%), -webkit-radial-gradient(ellipse farthest-corner at 60% -20%, #893dc2, rgba(0, 0, 0, 0) 50%), -webkit-radial-gradient(ellipse farthest-corner at 100% 100%, #d9317a, rgba(0, 0, 0, 0)), -webkit-linear-gradient(#6559ca, #bc318f 30%, #e33f5f 50%, #f77638 70%, #fec66d 100%);
+    background: radial-gradient(circle farthest-corner at 35% 90%, #fec564, rgba(0, 0, 0, 0) 50%), radial-gradient(circle farthest-corner at 0 140%, #fec564, rgba(0, 0, 0, 0) 50%), radial-gradient(ellipse farthest-corner at 0 -25%, #5258cf, rgba(0, 0, 0, 0) 50%), radial-gradient(ellipse farthest-corner at 20% -50%, #5258cf, rgba(0, 0, 0, 0) 50%), radial-gradient(ellipse farthest-corner at 100% 0, #893dc2, rgba(0, 0, 0, 0) 50%), radial-gradient(ellipse farthest-corner at 60% -20%, #893dc2, rgba(0, 0, 0, 0) 50%), radial-gradient(ellipse farthest-corner at 100% 100%, #d9317a, rgba(0, 0, 0, 0)), linear-gradient(#6559ca, #bc318f 30%, #e33f5f 50%, #f77638 70%, #fec66d 100%);
+    -webkit-border-radius: 3em; -moz-border-radius: 3em; border-radius: 3em;
+    -webkit-box-shadow: -1px 3px 6px rgba(0,0,0,.2); box-shadow: -1px 3px 6px rgba(0,0,0,.2);
+  }
+  .instagram-logo::before {
+    border: 0.75em solid #fff;
+    content: "";
+    position: absolute;
+    display: block;
+    -webkit-border-radius: 3em; -moz-border-radius: 3em; border-radius: 3em;
+    left:12%;
+    right:12%;
+    bottom: 12%;
+    top:12%;
+  }
+  .camera {
+    border: 0.75em solid #fff;
+    position: absolute;
+    left:30%;
+    right:30%;
+    bottom: 30%;
+    top:30%;
+    -webkit-border-radius: 50%; -moz-border-radius: 50%; border-radius: 50%;
+  }
+  .camera::after {
+    content: "";
+    display: block;
+    background-color: #fff;
+    -webkit-border-radius: 50%; -moz-border-radius: 50%; border-radius: 50%;
+    width: 16px;
+    height: 16px;
+    position: absolute;
+    right: -20px;
+    top: -20px;
+  }
