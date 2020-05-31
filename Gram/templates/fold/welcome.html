@@ -1,1 +1,21 @@
-<h1>the</h1>
+{%extends 'fold/base.html'%}
+{% load bootstrap3 %}
+{% load static%}
+{% block content %}
+{{block.super}}
+<link href="https://fonts.googleapis.com/css2?family=Kaushan+Script&family=Open+Sans&display=swap" rel="stylesheet"> 
+{% block styles %}
+{% bootstrap_css %}
+<link rel="stylesheet" href="{% static 'css/index.css' %}">
+{% endblock %}
+<div>
+<div class="head">
+<a href="http://www.nytimes.com/2016/05/12/technology/the-great-instagram-logo-freakout-of-2016.html"><div class="instagram-logo">
+    <div class="camera"></div>
+    </div></a><br><br>
+    <img src="{% static 'images/wer.png'%}" class="thumbnail" style=" margin-left: -77px;" >
+    
+</div>
+
+</div>
+{% endblock %}
