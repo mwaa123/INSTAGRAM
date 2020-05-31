@@ -15,4 +15,4 @@ def gram(request):
         'images':Image.objects.all()
     }
     
-    return render(request,'fold/gram.html')
+    return render(request,'fold/gram.html',context)

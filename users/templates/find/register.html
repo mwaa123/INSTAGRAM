@@ -1,0 +1,32 @@
+{%extends 'fold/base.html'%}
+{% load bootstrap3 %}
+{% load crispy_forms_tags %}
+{% load static%}
+{% block content %}
+
+<link href="https://fonts.googleapis.com/css2?family=Kaushan+Script&family=Open+Sans&display=swap" rel="stylesheet"> 
+{% block styles %}
+{% bootstrap_css %}
+<link rel="stylesheet" href="{% static 'css/.css' %}">
+{% endblock %}
+<div class="container">
+<div class="content-section">
+   <div class="card">
+    <form method="POST" style="text-align: center;display: inline-block;">
+        {% csrf_token %}
+        <fieldset class="form-group">
+            <legend class="border-bottom mb-4">Welcome</legend>
+            {{ form|crispy }}
+        </fieldset>
+        <div class="form-group">
+            <button class="btn btn-outline-info" type="submit">Sign Up</button>
+        </div>
+    </form>
+    <div class="border-top pt-3">
+        <small class="text-muted" style="text-align: center;">
+            Already Have An Account? <a class="ml-2" href="#">Sign In</a>
+        </small>
+    </div>
+</div>
+</div>
+{% endblock %}
