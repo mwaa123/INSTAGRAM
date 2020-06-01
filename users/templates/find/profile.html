@@ -1,0 +1,55 @@
+{% extends "fold/base.html" %}
+{% load crispy_forms_tags %}
+{% load bootstrap3 %}
+{% load static%}
+{% block content %}
+{{block.super}}
+{% block styles %}
+{% bootstrap_css %}
+<link rel="stylesheet" href="{% static 'css/style.css' %}">
+{% endblock %}
+<div class="container">
+  <main class="bg-gray-100 bg-opacity-25">
+  
+    <div class="lg:w-8/12 lg:mx-auto mb-8">
+  
+      <header class="flex flex-wrap items-center p-4 md:py-8">
+  
+        <div class="md:w-3/12 md:ml-16">
+            <h2 class="account-heading">{{ user.username }} </h2>
+        </div>
+  
+        <!-- profile meta -->
+        <div class="w-8/12 md:w-7/12 ml-4">
+          <div class="md:flex md:flex-wrap md:items-center mb-4">
+            <h2 class="text-3xl inline-block font-light md:mr-2 mb-2 sm:mb-0">
+                <!-- <h2 class="account-heading">{{ user.username }}</h2> -->
+            </h2>
+        <div>
+            <p class="text-secondary">{{ user.profile.bio }}</p>
+          </div>
+  
+        </div>
+      </header>
+        <figure class="snip1390">
+          <img class="w-20 h-20 md:w-40 md:h-40 object-cover rounded-fullborder-2 border-pink-600 p-1" src="{{ user.profile.image.url }}"alt="profile" style="border-radius: 50%;width: 100px;" >
+          <figcaption>
+             <h2 class="account-heading">{{ user.username }} </h2>
+            <p class="text-secondary">{{ user.profile.bio }}</p>
+            <form  action="" method="post">{% csrf_token %}
+              {{u_form|crispy}}<br>
+              {{p_form|crispy}}<br>
+              <div class="form-group" style="text-align: center;">
+                <input type="submit" class="btn btn-primary btn-sm" value="update">
+              </div>
+  
+              <input type="hidden" name="next" value="{{next}}">
+  
+            </form>
+          </figcaption>
+        </figure>
+  </main>
+
+</div>
+
+{% endblock%}

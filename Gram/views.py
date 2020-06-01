@@ -3,6 +3,7 @@ from __future__ import unicode_literals
 
 from django.shortcuts import render,redirect
 from .models import Image
+from django.views.generic import ListView,DetailView,CreateView,UpdateView,DeleteView
 
 # Create your views here.
 def welcome(request):
