@@ -21,8 +21,9 @@ from users import views as user_views
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url('register/', user_views.register,name='register'),
+    url('login/', auth_views.LoginView.as_view(template_name='find/login.html'),name='login'),
+    url('logout/', auth_views.LogoutView.as_view(template_name='find/logout.html'),name='logout'),
     url(r'',include('Gram.urls')),
-    url('register/', user_views.register,name='register'),
 ]
 
 
