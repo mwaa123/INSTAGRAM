@@ -77,6 +77,8 @@ $ python3.6 manage.py runserver
 
 ## License
 
+[LICENCE](/home/INSTA/LICENCE.md)
+
 ## Acknowledgments
 
 Hat tip to anyone whose code was used
