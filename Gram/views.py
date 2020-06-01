@@ -17,3 +17,8 @@ def gram(request):
     }
     
     return render(request,'fold/gram.html',context)
+class ImageListView(ListView):
+    model = Image
+    template_name = 'Gram/gram.html'
+    context_object_name = 'images'
+    ordering = ['-date_posted']
