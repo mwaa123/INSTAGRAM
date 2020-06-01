@@ -27,6 +27,7 @@ urlpatterns = [
     url('login/', auth_views.LoginView.as_view(template_name='find/login.html'),name='login'),
     url('logout/', auth_views.LogoutView.as_view(template_name='find/logout.html'),name='logout'),
     url(r'',include('Gram.urls')),
+    url(r'',include('users.urls')),
 ]
 
 

@@ -2,16 +2,26 @@ from django.shortcuts import render, redirect
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from .forms import UserRegisterForm, UserUpdateForm, ProfileUpdateForm
-
+from django.core.mail import send_mail
+from django.conf import settings
 
 
 def register(request):
     if request.method == 'POST':
         form = UserRegisterForm(request.POST)
         if form.is_valid():
+            # send_mail(
+            #     'Welcome',
+            #     'Welcome to black gram',
+            #     settings.EMAIL_HOST_USER,
+            #     ['mwaaruth@gmail.com'],
+            #     fail_silently=False,
+            # )
             form.save()
             username = form.cleaned_data.get('username')
+            email =form.cleaned_data.get(email)
             messages.success(request, f'Account created for {username}!')
+            
             return redirect('profile')
     else:
         form = UserRegisterForm()
@@ -38,3 +48,15 @@ def profile(request):
     }
 
     return render(request,'find/profile.html',context)
+
+def send(request):
+    send_mail(
+    'Welcome',
+    'Welcome to black gram',
+    'ruthwanjiramugo@gmail.com',
+    ['mwaaruth@gmail.com'],
+    fail_silently=False,
+)
+
+
+    return render(request,'find/send.html')
