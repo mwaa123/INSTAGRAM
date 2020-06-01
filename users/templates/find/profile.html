@@ -6,8 +6,70 @@
 {{block.super}}
 {% block styles %}
 {% bootstrap_css %}
-<link rel="stylesheet" href="{% static 'css/style.css' %}">
+<link rel="stylesheet" href="{% static 'css/login.css' %}">
 {% endblock %}
+<head>
+  <meta charset="UTF-8">
+  <title>Instagram Login</title>
+  <script type='text/javascript' src='index.js'></script>
+</head>
+<div class="change" style="text-align: center;" >
+<body class="the-body">
+  <span id="react-root">
+    <section class="ig-section-1">
+      <main class="the-main">
+         <div class="the-outer-1">
+           <article class="the-outer-2">
+             <div class="the-left-strip-container">
+               <div class="login-elements">
+                 <h1 style="text-align: center;">
+                  <img class="w-20 h-20 md:w-40 md:h-40 object-cover rounded-fullborder-2 border-pink-600 p-1" src="{{ user.profile.image.url }}"alt="profile" style="border-radius: 50%;width: 100px;" >
+                 </h1>
+                 <div class='login-forms-container'>
+                  <form  action="" method="post" style="text-align: center;">{% csrf_token %}
+                    {{u_form|crispy}}<br>
+                    {{p_form|crispy}}<br>
+                    <div class="form-group" style="text-align: center;">
+                      <input type="submit" class="btn btn-primary btn-sm" value="update">
+                    </div>
+        
+                    <input type="hidden" name="next" value="{{next}}">
+        
+                  </form>
+                 </div>
+               </div>
+               </div>
+             </div>
+           </article>
+         </div>
+      </main>    
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- 
+
+
 <div class="container">
   <main class="bg-gray-100 bg-opacity-25">
   
@@ -20,11 +82,11 @@
         </div>
   
         <!-- profile meta -->
-        <div class="w-8/12 md:w-7/12 ml-4">
+        <!-- <div class="w-8/12 md:w-7/12 ml-4">
           <div class="md:flex md:flex-wrap md:items-center mb-4">
             <h2 class="text-3xl inline-block font-light md:mr-2 mb-2 sm:mb-0">
                 <!-- <h2 class="account-heading">{{ user.username }}</h2> -->
-            </h2>
+            <!-- </h2>
         <div>
             <p class="text-secondary">{{ user.profile.bio }}</p>
           </div>
@@ -50,6 +112,6 @@
         </figure>
   </main>
 
-</div>
+</div>   -->
 
 {% endblock%}
