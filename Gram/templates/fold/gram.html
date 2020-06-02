@@ -16,20 +16,21 @@
     <div class="card">
       <div class="card-image">
         {% if image in images %}
-  <img src="{{image.img.url}}" class="thumbnail"alt="Image" style="height: 200px;width: 200px;">
-<span class="card-title" style="text-align: center;color: black;">{{image.title}}</span>
-      </div>
-      {%endif%}
+  <img src="{{image.image.url}}" class="thumbnail"alt="Image" style="height: 200px;width: 200px;">
+  <span class="card-title" style="text-align: center;color: black;"><a href="{% url 'detail' image.id %}">{{image.title}}</a></span>
+
+  {% else %}
+       <h2>There is no image</h2>
+  </div>
+      {%endif%} 
       <div class="card-content">
         <p style="text-align: center;color: black;">{{image.caption}}</p>
         <small class="text-muted">{{ image.date_posted|date:"F d, Y" }}</small>
       </div>
     </div>
   </div>
-</div>   
-<h1><a class="ml-2" href="{% url 'profile' %}">profile</a></h1>   
+</div>  
 {% endfor %}
-</div>
 {% endblock %}
 
 

@@ -4,30 +4,23 @@ from django.contrib.auth.decorators import login_required
 from .forms import UserRegisterForm, UserUpdateForm, ProfileUpdateForm
 from django.core.mail import send_mail
 from django.conf import settings
-
+from django.contrib.auth.models import User
+# from django.db.models.signals import UserProfile
 
 def register(request):
     if request.method == 'POST':
         form = UserRegisterForm(request.POST)
         if form.is_valid():
-            # send_mail(
-            #     'Welcome',
-            #     'Welcome to black gram',
-            #     settings.EMAIL_HOST_USER,
-            #     ['mwaaruth@gmail.com'],
-            #     fail_silently=False,
-            # )
             form.save()
             username = form.cleaned_data.get('username')
-            email =form.cleaned_data.get(email)
             messages.success(request, f'Account created for {username}!')
             
-            return redirect('profile')
+        return redirect('profile')
     else:
         form = UserRegisterForm()
     return render(request, 'find/register.html', {'form': form})
 
-
+@login_required
 def profile(request):
     if request.method == 'POST':
         u_form = UserUpdateForm(request.POST, instance=request.user)

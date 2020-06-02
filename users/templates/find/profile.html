@@ -23,18 +23,18 @@
              <div class="the-left-strip-container">
                <div class="login-elements">
                  <h1 style="text-align: center;">
-                  <img class="w-20 h-20 md:w-40 md:h-40 object-cover rounded-fullborder-2 border-pink-600 p-1" src="{{ user.profile.image.url }}"alt="profile" style="border-radius: 50%;width: 100px;" >
+                  <img class="w-20 h-20 md:w-40 md:h-40 object-cover rounded-fullborder-2 border-pink-600 p-1" src="{{ user.profile.profile_img.url }}"alt="profile" style="border-radius: 50%;width: 100px;" >
                  </h1>
                  <div class='login-forms-container'>
                   <form  action="" method="post" style="text-align: center;">{% csrf_token %}
                     {{u_form|crispy}}<br>
                     {{p_form|crispy}}<br>
                     <div class="form-group" style="text-align: center;">
+                      <input type="submit" class="btn btn-primary btn-sm"href="{% url 'image-create' %}" value="New post">
                       <input type="submit" class="btn btn-primary btn-sm" value="update">
                     </div>
         
                     <input type="hidden" name="next" value="{{next}}">
-        
                   </form>
                  </div>
                </div>
