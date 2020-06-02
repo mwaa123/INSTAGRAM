@@ -29,11 +29,11 @@ class Image(models.Model):
         return reverse('detail', kwargs={'pk': self.pk})
 
 
-# class Comment(models.Model):
+class Comment(models.Model):
     
-#     image =models.ForeignKey(Image, related_name = 'image_comments',on_delete = models.CASCADE)
-#     user = models.ForeignKey(User, on_delete=models.CASCADE)
-#     review= models.TextField()
+    image =models.ForeignKey(Image, related_name = 'image_comments',on_delete = models.CASCADE)
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    review= models.TextField()
 
-#     def __str__(self):
-#         return self.review
+    def __str__(self):
+        return self.review
