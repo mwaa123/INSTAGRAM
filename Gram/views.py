@@ -90,17 +90,17 @@ class CommentCreateView(LoginRequiredMixin,CreateView):
 
 
 
-# class ImageLikeRedirectView(RedirectView):
-#     def get_redirect_url(self,pk, *args, **kwargs):
-#         obj = get_object_or_404(Image, pk = pk)
-#         url= obj.get_absolute_url()
+class ImageLikeRedirectView(RedirectView):
+    def get_redirect_url(self,pk, *args, **kwargs):
+        obj = get_object_or_404(Image, pk = pk)
+        url= obj.get_absolute_url()
       
-#         user = self.request.user
-#         if user.is_authenticated:
-#             if user in obj.likes.all():
-#                 obj.likes.remove(user)
-#                 status =''
-#             else:
-#                 obj.likes.add(user)
-#                 status='red'
-#         return url
+        user = self.request.user
+        if user.is_authenticated:
+            if user in obj.likes.all():
+                obj.likes.remove(user)
+                status =''
+            else:
+                obj.likes.add(user)
+                status='red'
+        return url
