@@ -77,16 +77,16 @@ def search_results(request):
 
         return render(request,'Gram/search.html',{"message":message})
 
-# class CommentCreateView(LoginRequiredMixin,CreateView):
+class CommentCreateView(LoginRequiredMixin,CreateView):
      
-#     model = Comment
-#     fields = ['review','image','user']
-#     success_url = ('/')
+    model = Comment
+    fields = ['review','image','user']
+    success_url = ('/')
 
-#     def form_valid(self,form):
+    def form_valid(self,form):
       
-#         form.instance.profile = self.request.user.profile
-#         return super().form_valid(form)
+        form.instance.profile = self.request.user.profile
+        return super().form_valid(form)
 
 
 
